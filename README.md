@@ -2,6 +2,11 @@
 
 Used as the rasterization engine for the paper "3D Gaussian Splatting for Real-Time Rendering of Radiance Fields". If you can make use of it in your own research, please be so kind to cite us.
 
+## Changes from the original code
+
+* Added `@custom_fwd` and `@custom_bwd` wrappers in the rasterizer class, to keep input-output `torch.float32` type of the rasterization operation. Useful when training in mixed precision;
+* Now `raster_settings` in the rastizer class is assumed to be a python `dict`, not `NamedTuple`. This will not affect your code, as conversion to dict is done inside the rasterizer constructor.
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
